@@ -4,145 +4,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog</title>
+    <title>Meu Blog | Dilemas Digitais</title>
     <style>
+        /* Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f4f8; /* Substituído o amarelo/aspas por um tom suave e moderno */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1c2d3d;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
         header {
             background-color: #9fcdff;
             color: #063040;
             text-align: center;
             max-width: 800px;
-            margin-bottom: 30px;
-            margin: 0 auto;
+            margin: 30px auto;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        body {
-            background-color: "yellow";
-
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Conteúdo Principal */
         main {
-            background-color: #9fcdff;
-            color: #183C63;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
             display: flex;
-            align-items: center;
-            margin-bottom: 30px;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
+            padding: 0 15px;
         }
 
-        img {
-            width: 80px;
-            height: 80px;
-        }
-
-        div p {
-            font-weight: bold;
-        }
-
-        .artigo-autor {
-            font-weight: bold;
-        }
-
-        .imagem {
-            width: 200px;
-            height: 200px;
-        }
-
+        /* Artigos */
         article {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            gap: 20px;
         }
 
+        .conteudo-artigo {
+            flex: 1;
+        }
+
+        .icone-artigo {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        article h2 {
+            color: #183C63;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+            color: #627d98;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        article p {
+            margin-bottom: 15px;
+            color: #486581;
+        }
+
+        /* Imagens Laterais */
+        .container-imagem {
+            flex-shrink: 0;
+        }
+
+        .imagem-destaque {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Botões de Reação */
+        button {
+            background-color: #f0f4f8;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #486581;
+            margin-right: 8px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #d9e2ec;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button span {
+            margin-left: 5px;
+        }
+
+        /* Rodapé */
         footer {
             background-color: #02090e;
             color: rgb(255, 253, 253);
             text-align: center;
-            padding: 20px;
+            padding: 25px;
+            margin-top: auto;
+        }
+
+        /* Responsividade para Celulares */
+        @media (max-width: 600px) {
+            article {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .imagem-destaque {
+                width: 100%;
+                height: 200px;
+            }
+            .icone-artigo {
+                margin: 0 auto 10px auto;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Dilemas Digitais & Soluções
-            "Mente Saudável Online"
-        </h1>
+        <h1>Dilemas Digitais & Soluções<br>"Mente Saudável Online"</h1>
         <p>Vou compartilhar um pouco sobre os principais desafios do mundo conectado e trazer soluções práticas para viver melhor na era digital.</p>
-        <button>❤️<span>0</span></button>
-        <button>👍<span>0</span></button>
-
+        <button>❤️ <span>0</span></button>
+        <button>👍 <span>0</span></button>
     </header>
+
+    <!-- Unificado todos os artigos dentro de uma única tag <main> -->
     <main>
+        <!-- Artigo 1 -->
         <article>
-            <div>
-                <img src="images.png" alt="📱Presos na Tela">
+            <div class="conteudo-artigo">
+                <img src="images.png" alt="📱Presos na Tela" class="icone-artigo">
                 <h2>O Vício do Scrolling Infinito</h2>
                 <p class="artigo-autor">Por: Kettllyn</p>
                 <p>O scrolling infinito é o ato de arrastar a tela das redes sociais sem parar, buscando novidades a cada segundo. Esse hábito gera cansaço mental e rouba o nosso tempo. A solução é definir um limite de tempo diário no celular para esses aplicativos e fazer pausas programadas.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
             </div>
-            <div>
-                <img src="infinito.jpeg" class="imagem">
+            <div class="container-imagem">
+                <img src="infinito.jpeg" alt="Ilustração do scrolling infinito" class="imagem-destaque">
             </div>
         </article>
 
-    </main>
-    <main>
+        <!-- Artigo 2 -->
         <article>
-            <div>
-                <img src="images (2).jpeg" alt="🔔 Alerta Constante">
+            <div class="conteudo-artigo">
+                <img src="images (2).jpeg" alt="🔔 Alerta Constante" class="icone-artigo">
                 <h2>Ansiedade por Notificações</h2>
                 <p class="artigo-autor">Por: Kettllyn</p>
                 <p>O som constante de novas mensagens e notificações nos deixa em estado de alerta e ansiedade constante. Para resolver esse dilema, a melhor saída é desativar os alertas sonoros de aplicativos que não são urgentes e silenciar o aparelho nos momentos de estudo e trabalho.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
             </div>
-            <div>
-                <img src="imagem.jpg" class="imagem">
+            <div class="container-imagem">
+                <img src="imagem.jpg" alt="Ilustração de notificações" class="imagem-destaque">
             </div>
-
         </article>
-    </main>
-    <main>
+
+        <!-- Artigo 3 -->
         <article>
-            <div>
-                <img src="images (3).jpeg" alt="✨Vidas de Filtro">
+            <div class="conteudo-artigo">
+                <img src="images (3).jpeg" alt="✨Vidas de Filtro" class="icone-artigo">
                 <h2>A Armadilha da Comparação</h2>
                 <p class="artigo-autor">Por: Kettllyn</p>
                 <p>Olhar vidas perfeitas filtradas no Instagram nos faz achar que a nossa realidade é sem graça. A solução para esse dilema é lembrar que as redes exibem apenas recortes felizes. Foque nas suas conquistas reais e diminua o tempo seguindo perfis que te fazem sentir mal.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
             </div>
-            <div>
-                <img src="comparação.png" class="imagem">
+            <div class="container-imagem">
+                <img src="comparação.png" alt="Ilustração de comparação social" class="imagem-destaque">
             </div>
         </article>
-    </main>
-    <main>
+
+        <!-- Artigo 4 -->
         <article>
-            <div>
-                <img src="images (4).jpeg" alt="🧠Mente Conectada">
+            <div class="conteudo-artigo">
+                <img src="images (4).jpeg" alt="🧠Mente Conectada" class="icone-artigo">
                 <h2>Equilíbrio ou Desconexão total?</h2>
                 <p class="artigo-autor">Por: Kettllyn</p>
                 <p>O segredo para viver na era digital não é abandonar a internet, mas sim aprender a usar a tecnologia a nosso favor de forma consciente. Cada escolha na nossa rotina digital constrói nossa paz ou nosso estresse. Buscar o equilíbrio diário é a única forma de proteger nossa saúde mental nas telas.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
             </div>
-            <div>
-                <img src="conexão.webp" alt="livro com símbolos de tecnologia" class="imagem">
+            <div class="container-imagem">
+                <img src="conexão.webp" alt="Livro com símbolos de tecnologia" class="imagem-destaque">
             </div>
         </article>
     </main>
 
     <footer>
-        <p> 2026 Meu Blog Tech | Desenvolvido por Kettllyn</p>
+        <p>&copy; 2026 Meu Blog Tech | Desenvolvido por Kettllyn</p>
     </footer>
 
     <script>
@@ -161,9 +247,8 @@
                     curtiu = false;
                 }
             }
-        })
+        });
     </script>
-
 </body>
 
 </html>
