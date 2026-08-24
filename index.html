@@ -4,9 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog | Dilemas Digitais</title>
+    <title>Meu Blog | Dilemas Digitais & Soluções</title>
     <style>
-        /* Configurações Globais */
+        /* Variáveis de Cores - Altere aqui para mudar o tema inteiro */
+        :root {
+            --cor-fundo-tela: #f4f7f6;      /* Cinza claro relaxante */
+            --cor-fundo-card: #ffffff;      /* Branco puro para os posts */
+            --cor-primaria: #cbdcd5;        /* Verde Salva Suave (Destaques/Header) */
+            --cor-texto-escuro: #1c2d27;    /* Grafite escuro para leitura confortável */
+            --cor-texto-suame: #556b63;     /* Verde acinzentado para sub-textos e autor */
+            --cor-botao-fundo: #e6edea;     /* Fundo sutil para os botões */
+            --cor-botao-hover: #d3dfda;     /* Cor ao passar o mouse */
+            --cor-rodape: #111a16;          /* Fundo do rodapé quase preto */
+        }
+
+        /* Reset Geral */
         * {
             margin: 0;
             padding: 0;
@@ -14,149 +26,197 @@
         }
 
         body {
-            background-color: #f0f4f8; /* Substituído o amarelo/aspas por um tom suave e moderno */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #1c2d3d;
+            background-color: var(--cor-fundo-tela);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--cor-texto-escuro);
             line-height: 1.6;
+            padding: 0;
         }
 
         /* Cabeçalho */
         header {
-            background-color: #9fcdff;
-            color: #063040;
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto-escuro);
             text-align: center;
             max-width: 800px;
-            margin: 30px auto;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin: 40px auto;
+            padding: 40px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
 
         header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
 
         header p {
             font-size: 1.1rem;
-            margin-bottom: 15px;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            color: var(--cor-texto-escuro);
+            opacity: 0.9;
         }
 
-        /* Conteúdo Principal */
+        /* Área de Conteúdo Principal */
         main {
             max-width: 800px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 60px auto;
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            padding: 0 15px;
+            gap: 30px;
+            padding: 0 20px;
         }
 
-        /* Artigos */
+        /* Cards dos Artigos */
         article {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            gap: 20px;
+            background-color: var(--cor-fundo-card);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(28, 45, 39, 0.03);
+            gap: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Efeito flutuante ao passar o mouse no card */
+        article:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(28, 45, 39, 0.06);
         }
 
         .conteudo-artigo {
             flex: 1;
         }
 
+        /* Ícone pequeno de introdução */
         .icone-artigo {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 10px;
+            width: 44px;
+            height: 44px;
+            margin-bottom: 15px;
             display: block;
+            object-fit: contain;
         }
 
         article h2 {
-            color: #183C63;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 8px;
+            color: var(--cor-texto-escuro);
+            letter-spacing: -0.3px;
         }
 
         .artigo-autor {
-            font-weight: bold;
-            color: #627d98;
+            font-weight: 600;
+            color: var(--cor-texto-suame);
             font-size: 0.9rem;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         article p {
-            margin-bottom: 15px;
-            color: #486581;
+            margin-bottom: 20px;
+            color: var(--cor-texto-escuro);
+            opacity: 0.85;
+            font-size: 1.05rem;
         }
 
-        /* Imagens Laterais */
+        /* Container da Imagem Lateral */
         .container-imagem {
             flex-shrink: 0;
         }
 
         .imagem-destaque {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        /* Botões de Reação */
+        /* Botões de Interação Estilizados */
         button {
-            background-color: #f0f4f8;
+            background-color: var(--cor-botao-fundo);
             border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 30px;
             cursor: pointer;
-            font-weight: bold;
-            color: #486581;
-            margin-right: 8px;
-            transition: background-color 0.2s, transform 0.1s;
+            font-weight: 600;
+            color: var(--cor-texto-escuro);
+            margin-right: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
         }
 
         button:hover {
-            background-color: #d9e2ec;
+            background-color: var(--cor-botao-hover);
+            transform: translateY(-1px);
         }
 
         button:active {
-            transform: scale(0.95);
+            transform: scale(0.96);
         }
 
         button span {
-            margin-left: 5px;
+            font-variant-numeric: tabular-nums; /* Evita que o botão mude de tamanho com números diferentes */
         }
 
         /* Rodapé */
         footer {
-            background-color: #02090e;
-            color: rgb(255, 253, 253);
+            background-color: var(--cor-rodape);
+            color: #ffffff;
             text-align: center;
-            padding: 25px;
-            margin-top: auto;
+            padding: 30px 20px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
-        /* Responsividade para Celulares */
-        @media (max-width: 600px) {
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Layout Responsivo para Dispositivos Móveis */
+        @media (max-width: 650px) {
+            header {
+                margin: 20px;
+                padding: 30px 15px;
+            }
+
             article {
-                flex-direction: column-reverse;
+                flex-direction: column-reverse; /* Imagem fica no topo do texto no celular */
+                padding: 20px;
+                gap: 20px;
                 text-align: center;
             }
+
+            .icone-artigo {
+                margin: 0 auto 15px auto;
+            }
+
+            .container-imagem {
+                width: 100%;
+            }
+
             .imagem-destaque {
                 width: 100%;
-                height: 200px;
+                height: 220px;
             }
-            .icone-artigo {
-                margin: 0 auto 10px auto;
+
+            button {
+                margin: 5px;
             }
         }
     </style>
 </head>
 
 <body>
+
     <header>
         <h1>Dilemas Digitais & Soluções<br>"Mente Saudável Online"</h1>
         <p>Vou compartilhar um pouco sobre os principais desafios do mundo conectado e trazer soluções práticas para viver melhor na era digital.</p>
@@ -164,7 +224,6 @@
         <button>👍 <span>0</span></button>
     </header>
 
-    <!-- Unificado todos os artigos dentro de uma única tag <main> -->
     <main>
         <!-- Artigo 1 -->
         <article>
@@ -223,32 +282,3 @@
             </div>
             <div class="container-imagem">
                 <img src="conexão.webp" alt="Livro com símbolos de tecnologia" class="imagem-destaque">
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Meu Blog Tech | Desenvolvido por Kettllyn</p>
-    </footer>
-
-    <script>
-        const botoes = document.querySelectorAll("button");
-        botoes.forEach(function (botao) {
-            let curtiu = false;
-            botao.addEventListener("click", botaoClicado);
-            function botaoClicado() {
-                console.log("fui clicado");
-                let texto = botao.querySelector("span");
-                if (curtiu === false) {
-                    texto.textContent++;
-                    curtiu = true;
-                } else {
-                    texto.textContent--;
-                    curtiu = false;
-                }
-            }
-        });
-    </script>
-</body>
-
-</html>
