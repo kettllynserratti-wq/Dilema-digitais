@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog - Dilemas Digitais</title>
+    <style>
+        body {
+            background-color: #f0f7ff; /* Azul claro suave e moderno */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #9fcdff;
+            color: #063040;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        article {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .conteudo-artigo {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        img.icone-tech {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .imagem-principal {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: #e1f0ff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #063040;
+            margin-right: 5px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #bce0ff;
+        }
+
+        footer {
+            background-color: #02090e;
+            color: rgb(255, 253, 253);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Dilemas Digitais & Soluções</h1>
+        <p>Reflexões e passos práticos para encontrar o equilíbrio, proteger sua mente e viver bem na era da hiperconexão.</p>
+        <button>❤️ <span>0</span></button>
+        <button>👍 <span>0</span></button>
+    </header>
+
+    <main>
+        <!-- ARTIGO 1: O ALGORITMO DA ALMA -->
+        <article>
+            <div class="conteudo-artigo">
+                <img src="98acba742d1ccf7cffb2ff71573f0563.jpg" alt="Tecnologia" class="icone-tech">
+                <h2>O Algoritmo da Alma: Vencer os Dilemas Digitais</h2>
+                <p class="artigo-autor">Por: Kettllyn</p>
+                <p>Viver conectado traz grandes dilemas: a pressa das redes sociais, a comparação constante e o vício em notificações que roubam a nossa paz. O mundo digital pode nos afastar do que realmente importa se não tivermos limites claros na nossa rotina.</p>
+                
+                <p>Para vencer a distração e a ansiedade digital, aqui estão 3 soluções práticas: <br>
+                1. Defina horários fixos no dia para desligar totalmente as telas.<br>
+                2. Use o ambiente online para criar e partilhar conteúdos que edificam.<br>
+                3. Lembre-se de preservar sua identidade real fora das curtidas e aprovações virtuais.</p>
+                
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
+            </div>
+            <div>
+                <img src="file_0000000029ac820d93fde5b9fff894d6.png" class="imagem-principal" alt="Dilemas Digitais">
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Meu Blog Tech | Desenvolvido por Kettllyn</p>
+    </footer>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+        botoes.forEach(function (botao) {
+            let curtiu = false;
+            botao.addEventListener("click", botaoClicado);
+            function botaoClicado() {
+                let texto = botao.querySelector("span");
+                if (curtiu === false) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
