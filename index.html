@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Blog | Dilemas Digitais & Soluções</title>
     <style>
-        /* Variáveis de Cores - Altere aqui para mudar o tema inteiro */
+        /* ==========================================================================
+           VARIÁVEIS DE AMBIENTE (Tema do Sistema)
+           ========================================================================== */
         :root {
             --cor-fundo-tela: #f4f7f6;      /* Cinza claro relaxante */
             --cor-fundo-card: #ffffff;      /* Branco puro para os posts */
             --cor-primaria: #cbdcd5;        /* Verde Salva Suave (Destaques/Header) */
             --cor-texto-escuro: #1c2d27;    /* Grafite escuro para leitura confortável */
-            --cor-texto-suame: #556b63;     /* Verde acinzentado para sub-textos e autor */
+            --cor-texto-suave: #556b63;     /* Verde acinzentado para sub-textos e autor */
             --cor-botao-fundo: #e6edea;     /* Fundo sutil para os botões */
             --cor-botao-hover: #d3dfda;     /* Cor ao passar o mouse */
             --cor-rodape: #111a16;          /* Fundo do rodapé quase preto */
         }
 
-        /* Reset Geral */
+        /* ==========================================================================
+           RESET & CONFIGURAÇÕES GERAIS
+           ========================================================================== */
         * {
             margin: 0;
             padding: 0;
@@ -33,7 +37,11 @@
             padding: 0;
         }
 
-        /* Cabeçalho */
+        /* ==========================================================================
+           COMPONENTES E LAYOUT
+           ========================================================================== */
+        
+        /* Cabeçalho Principal */
         header {
             background-color: var(--cor-primaria);
             color: var(--cor-texto-escuro);
@@ -70,7 +78,7 @@
             padding: 0 20px;
         }
 
-        /* Cards dos Artigos */
+        /* Cards Informativos (Artigos) */
         article {
             display: flex;
             justify-content: space-between;
@@ -83,7 +91,6 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* Efeito flutuante ao passar o mouse no card */
         article:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 35px rgba(28, 45, 39, 0.06);
@@ -93,7 +100,6 @@
             flex: 1;
         }
 
-        /* Ícone pequeno de introdução */
         .icone-artigo {
             width: 44px;
             height: 44px;
@@ -111,7 +117,7 @@
 
         .artigo-autor {
             font-weight: 600;
-            color: var(--cor-texto-suame);
+            color: var(--cor-texto-suave);
             font-size: 0.9rem;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -125,7 +131,7 @@
             font-size: 1.05rem;
         }
 
-        /* Container da Imagem Lateral */
+        /* Mídias e Imagens */
         .container-imagem {
             flex-shrink: 0;
         }
@@ -138,7 +144,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        /* Botões de Interação Estilizados */
+        /* Elementos de Interação (Botões) */
         button {
             background-color: var(--cor-botao-fundo);
             border: none;
@@ -164,10 +170,10 @@
         }
 
         button span {
-            font-variant-numeric: tabular-nums; /* Evita que o botão mude de tamanho com números diferentes */
+            font-variant-numeric: tabular-nums;
         }
 
-        /* Rodapé */
+        /* Rodapé Institucional */
         footer {
             background-color: var(--cor-rodape);
             color: #ffffff;
@@ -181,7 +187,9 @@
             opacity: 0.8;
         }
 
-        /* Layout Responsivo para Dispositivos Móveis */
+        /* ==========================================================================
+           RESPONSIVIDADE (Mobile First / Adaptável)
+           ========================================================================== */
         @media (max-width: 650px) {
             header {
                 margin: 20px;
@@ -189,7 +197,7 @@
             }
 
             article {
-                flex-direction: column-reverse; /* Imagem fica no topo do texto no celular */
+                flex-direction: column-reverse;
                 padding: 20px;
                 gap: 20px;
                 text-align: center;
@@ -219,66 +227,46 @@
 
     <header>
         <h1>Dilemas Digitais & Soluções<br>"Mente Saudável Online"</h1>
-        <p>Vou compartilhar um pouco sobre os principais desafios do mundo conectado e trazer soluções práticas para viver melhor na era digital.</p>
-        <button>❤️ <span>0</span></button>
-        <button>👍 <span>0</span></button>
+        <p>Compartilhando os principais desafios do mundo conectado e trazendo soluções práticas para viver melhor na era digital.</p>
+        <button type="button">❤️ <span>0</span></button>
+        <button type="button">👍 <span>0</span></button>
     </header>
 
     <main>
-        <!-- Artigo 1 -->
+        <!-- Artigo 1: Scrolling Infinito -->
         <article>
             <div class="conteudo-artigo">
-                <img src="images.png" alt="📱Presos na Tela" class="icone-artigo">
+                <img src="images.png" alt="Ícone de smartphone indicando uso excessivo" class="icone-artigo">
                 <h2>O Vício do Scrolling Infinito</h2>
                 <p class="artigo-autor">Por: Kettllyn</p>
                 <p>O scrolling infinito é o ato de arrastar a tela das redes sociais sem parar, buscando novidades a cada segundo. Esse hábito gera cansaço mental e rouba o nosso tempo. A solução é definir um limite de tempo diário no celular para esses aplicativos e fazer pausas programadas.</p>
-                <button>❤️ <span>0</span></button>
-                <button>👎 <span>0</span></button>
+                <button type="button">❤️ <span>0</span></button>
+                <button type="button">👎 <span>0</span></button>
             </div>
             <div class="container-imagem">
-                <img src="infinito.jpeg" alt="Ilustração do scrolling infinito" class="imagem-destaque">
+                <img src="infinito.jpeg" alt="Ilustração de uma pessoa presa ao scrolling infinito" class="imagem-destaque">
             </div>
         </article>
 
-        <!-- Artigo 2 -->
+        <!-- Artigo 2: Ansiedade e Notificações -->
         <article>
             <div class="conteudo-artigo">
-                <img src="images (2).jpeg" alt="🔔 Alerta Constante" class="icone-artigo">
+                <img src="images (2).jpeg" alt="Ícone de sino de notificação de alerta" class="icone-artigo">
                 <h2>Ansiedade por Notificações</h2>
                 <p class="artigo-autor">Por: Kettllyn</p>
                 <p>O som constante de novas mensagens e notificações nos deixa em estado de alerta e ansiedade constante. Para resolver esse dilema, a melhor saída é desativar os alertas sonoros de aplicativos que não são urgentes e silenciar o aparelho nos momentos de estudo e trabalho.</p>
-                <button>❤️ <span>0</span></button>
-                <button>👎 <span>0</span></button>
+                <button type="button">❤️ <span>0</span></button>
+                <button type="button">👎 <span>0</span></button>
             </div>
             <div class="container-imagem">
-                <img src="imagem.jpg" alt="Ilustração de notificações" class="imagem-destaque">
+                <img src="imagem.jpg" alt="Ilustração de várias telas e balões de notificação acumulados" class="imagem-destaque">
             </div>
         </article>
+    </main>
 
-        <!-- Artigo 3 -->
-        <article>
-            <div class="conteudo-artigo">
-                <img src="images (3).jpeg" alt="✨Vidas de Filtro" class="icone-artigo">
-                <h2>A Armadilha da Comparação</h2>
-                <p class="artigo-autor">Por: Kettllyn</p>
-                <p>Olhar vidas perfeitas filtradas no Instagram nos faz achar que a nossa realidade é sem graça. A solução para esse dilema é lembrar que as redes exibem apenas recortes felizes. Foque nas suas conquistas reais e diminua o tempo seguindo perfis que te fazem sentir mal.</p>
-                <button>❤️ <span>0</span></button>
-                <button>👎 <span>0</span></button>
-            </div>
-            <div class="container-imagem">
-                <img src="comparação.png" alt="Ilustração de comparação social" class="imagem-destaque">
-            </div>
-        </article>
+    <footer>
+        <p>&copy; 2026 Dilemas Digitais & Soluções. Todos os direitos reservados.</p>
+    </footer>
 
-        <!-- Artigo 4 -->
-        <article>
-            <div class="conteudo-artigo">
-                <img src="images (4).jpeg" alt="🧠Mente Conectada" class="icone-artigo">
-                <h2>Equilíbrio ou Desconexão total?</h2>
-                <p class="artigo-autor">Por: Kettllyn</p>
-                <p>O segredo para viver na era digital não é abandonar a internet, mas sim aprender a usar a tecnologia a nosso favor de forma consciente. Cada escolha na nossa rotina digital constrói nossa paz ou nosso estresse. Buscar o equilíbrio diário é a única forma de proteger nossa saúde mental nas telas.</p>
-                <button>❤️ <span>0</span></button>
-                <button>👎 <span>0</span></button>
-            </div>
-            <div class="container-imagem">
-                <img src="conexão.webp" alt="Livro com símbolos de tecnologia" class="imagem-destaque">
+</body>
+</html>
